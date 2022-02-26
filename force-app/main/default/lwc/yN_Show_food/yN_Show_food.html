@@ -1,0 +1,66 @@
+<!--
+  @description       : 
+  @author            : aahamjik
+  @group             : 
+  @last modified on  : 02-20-2022
+  @last modified by  : aahamjik
+-->
+<template>
+    <lightning-card>
+    <div >
+     <lightning-input 
+     id="foodInput"
+     type="text"
+     onchange={changeValue}
+     value={foodValue}
+     placeholder="Write the food's name"
+    label="Insert the food you want to search"></lightning-input>
+
+    <lightning-button
+    id="search"
+    label="Search"
+    onclick={handleClick}>
+    
+    </lightning-button>
+    <br>
+    <div class="YN_data">
+        <template if:true={show}>
+            <div class="YN_table">
+            
+            <table>
+                <tr>
+                <th>Food: {foodlabel}</th>
+                </tr>
+                <tr>
+                <td>Category: {foodCategory}</td>
+                </tr>
+                <tr>
+                    <td>CHOCDF: {foodCarbo}</td>
+                </tr>
+                <tr>
+                    <td>ENERC_KCAL: {foodKcal}</td>
+                </tr>
+                <tr>
+                    <td>FAT: {foodFat}</td>
+                </tr>
+                
+                <tr>
+                    <td>FIBTG: {foodFIBTG}</td>
+                </tr>
+                <tr>
+                    <td>PROCNT: {foodPROCNT}</td>
+                </tr>
+                
+                
+            </table>
+            
+            </div>
+            
+            <div class="YN_image">
+                <img src={path} alt="food photo" width="200" height="200">
+            </div>
+        </template>
+    </div>      
+    </div>
+</lightning-card>
+</template>
