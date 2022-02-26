@@ -6,18 +6,23 @@
   @last modified by  : aahamjik
 -->
 <template>
+    <h1>Shopping List</h1>
     <div class="main">
+       
         <lightning-input 
         id="product"
+        class="productCSS"
         type="text"
         onchange={productChangeValue}
         value={productValue}
         placeholder="Write product's name to buy"
         label="Insert the product' name to add to shopping list"></lightning-input>
 
+        <!-- Nombre de la lista -->
 
         <lightning-input 
         id="amount"
+        class="amountCSS"
         type="number"
         onchange={amountChangeValue}
         value={amountValue}
@@ -26,11 +31,15 @@
 
         <lightning-button
         id="addProduct"
+        class="buttonAdd"
         label="Add"
         onclick={handleClick}>
         
         </lightning-button>
-
-        <div class="list"></div>
+        
     </div>
+        <br>
+
+        <div class="list" lwc:dom="manual"></div>
+    
 </template>
