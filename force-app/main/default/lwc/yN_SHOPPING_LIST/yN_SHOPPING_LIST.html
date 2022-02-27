@@ -2,11 +2,47 @@
   @description       : 
   @author            : aahamjik
   @group             : 
-  @last modified on  : 02-26-2022
+  @last modified on  : 02-27-2022
   @last modified by  : aahamjik
 -->
 <template>
-    <h1>Shopping List</h1>
+    <h1><b></b>Shopping List</b></h1>
+    <div class="newListDiv">
+      <lightning-input 
+      type="checkbox"
+      label="New shopping list"
+      checked={checkNewList}
+      onchange={onChangeNewList}
+      ></lightning-input>
+      <lightning-input 
+      type="checkbox"
+      label="Is not new shopping list"
+      checked={checkExistingList}
+      onchange={onChangeExistingList}
+      ></lightning-input>
+
+    </div>
+    <div if:true={checkNewList}>
+      <lightning-input 
+      id="YNnewList"
+      class="newListCSS"
+      type="text"
+      onchange={newListChangeValue}
+      value={listNameValue}
+      label="Write the name of the shopping list"></lightning-input>
+
+    </div>
+    <div if:true={checkExistingList}>
+      <p>combobox</p>
+      <lightning-combobox
+        name="recentLists"
+        label="My lists"
+        placeholder="Select List"
+        value={existingListValue}
+        options={optionList}
+        onchange={handleListChange} >
+    </lightning-combobox>
+    </div>
     <div class="main">
        
         <lightning-input 
@@ -22,7 +58,7 @@
 
         <lightning-input 
         id="amount"
-        class="amountCSS"
+        class="amountCSS "
         type="number"
         onchange={amountChangeValue}
         value={amountValue}
@@ -31,7 +67,7 @@
 
         <lightning-button
         id="addProduct"
-        class="buttonAdd"
+        class="buttonAdd slds-button "
         label="Add"
         onclick={handleClick}>
         
@@ -39,7 +75,18 @@
         
     </div>
         <br>
+        
+        <div class="list" lwc:dom="manual">
+         
+        </div>
+        <br>
 
-        <div class="list" lwc:dom="manual"></div>
+        <lightning-button
+        id="sendButton"
+        class="buttonSend"
+        label="SAVE"
+        onclick={handleSave}>
+        
+        </lightning-button>
     
 </template>
