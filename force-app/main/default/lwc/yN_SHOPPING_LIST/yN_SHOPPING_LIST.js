@@ -2,10 +2,16 @@
  * @description       : 
  * @author            : aahamjik
  * @group             : 
- * @last modified on  : 02-27-2022
+ * @last modified on  : 03-02-2022
  * @last modified by  : aahamjik
 **/
-import { LightningElement } from 'lwc';
+import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
+import { LightningElement, wire } from 'lwc';
+import insertShoppingList from "@salesforce/apex/YN_ShoppingList.insertList";
+import USERID from "@salesforce/user/Id";
+import getAccountId from '@salesforce/apex/YN_ShoppingList.getAccountId';
+import getUserShoppingLists from '@salesforce/apex/YN_ShoppingList.getUserShoppingLists';
+import getSearchListItems from '@salesforce/apex/YN_ShoppingList.getSearchListItems';
 
 export default class YN_SHOPPING_LIST extends LightningElement {
     productValue;
@@ -14,15 +20,141 @@ export default class YN_SHOPPING_LIST extends LightningElement {
     checkExistingList=false;
     listNameValue;
     articlesList =new Array();
+    currentUserId;
+    currentAccount;
+    userShoppingLists;
+    selectedListValue;
+    chosenValue;
     /*Recoger las recomendaciones y actualizar la lista y actulizar combobox listas*/
+    constructor(){
+        super();
+        this.initialize();
+    }
+    //initilize the userId variable
+    initialize(){
+        this.currentUserId=USERID;
+        this.userShoppingLists=[];//this will hold key, value pair
+        this.selectedListValue='';//initilize combobox
+    }
+
+    //get AccountId to 
+    @wire(getAccountId,{userId:"$currentUserId"})
+    wireAccountId(result){
+        this.wireResult=result;
+        if(result.data){
+            this.currentAccount=result.data.AccountId;
+            console.log('acc id:'+this.currentAccount);
+        }else if(result.error){
+            this.currentAccount=undefined;
+            console.log('error en acc id:'+result.error);
+        }
+    }
+
+    //load all shopping list
+   
+    handleListChange(event){
+        const selectedOption=event.detail.value;
+        console.log('selected value=' + selectedOption);
+        this.chosenValue = selectedOption;
+        this.searchlistItems(selectedOption);
+
+    }
+    get selectedValue(){
+        console.log('Valor elegido:'+this.chosenValue);
+        return this.chosenValue;
+    }
+    searchlistItems(selectedOption){
+        getSearchListItems({listId:selectedOption})
+        .then((result)=>{
+            this.data=result;
+            this.searchItems=this.data;
+            console.log('resultado Listas:'+this.searchItems);
+            if(this.searchItems){
+                //quitar de stringfy
+                this.articlesList=JSON.parse(this.data);
+                this.printTable();
+            }
+        })
+    }
+
+    newListChangeValue(event){
+        this.listNameValue=event.target.value;
+        console.log(this.listNameValue);
+        
+    }
+
+    fillCombobox(){
+        getUserShoppingLists({accountId: this.currentAccount})
+        .then((result)=>{
+            this.data=result;
+            this.lists=this.data;
+            console.log('resultado Listas:'+this.lists);
+            if(this.lists){
+                for (let i in this.lists) {
+                    this.userShoppingLists =[...this.userShoppingLists, {value:this.lists[i].Id, label: this.lists[i].Name}];
+                    
+                }
+                console.log('userlist:'+this.userShoppingLists);
+                
+            }
+        })
+        .catch((error)=>{
+            this.error=error;
+            this.data=undefined;
+            console.debug('Error en Apex'+this.error);
+        })
+    }
+    //getter to return the list
+    get optionList(){
+        return this.userShoppingLists;
+    }
+
+
 
     handleSave(){
-        
-        if(((this.checkNewList == true && this.listNameValue != '' ) || this.checkExistingList==true) && (this.articlesList.length !=0)){
-            const jsonArraySend=JSON.stringify(this.articlesList);
-            console.log('JSON::'+jsonArraySend);
-            //enviar a apex crear lista
+        console.log('**nombre lista Nueva:'+this.listNameValue);
+        console.log('**ID de la cuenta:'+this.currentAccount);
+        console.log('userId'+this.currentUserId);
+        console.log('nombre lista existente:'+this.chosenValue);
+        if(((this.checkNewList == true && this.listNameValue != '' ) || (this.checkExistingList==true && this.chosenValue)) && (this.articlesList.length !=0)){
+            
+            let newList;
+            if(this.checkNewList){
+                newList=true;
+            }
+             if(this.checkExistingList){
+                 newList=false;
+             }
 
+            const jsonArraySend=JSON.stringify(this.articlesList);
+            console.log('**JSON::'+jsonArraySend);
+             console.log('**es nueva lista Boolean:'+this.newList);
+            //const patientAccountID='0017Q000006kJDFQA2';
+            
+            //enviar a apex crear lista
+            insertShoppingList({listName: this.listNameValue, Jsonlist:jsonArraySend,accountID:this.currentAccount,newList:newList,listID:this.chosenValue })
+            .then((result)=>{
+                this.data=result;
+                this.isInserted=this.data;
+                this.error=undefined;
+                console.log('resultado:'+this.isInserted);
+                
+                if(this.isInserted){
+
+                    console.log('Si se registró:'+this.isInserted);
+                    window.alert('Se ha registrado tu lista!! :)');
+                    
+                }else{
+                    console.log('No se registró:'+this.isInserted);
+                    window.alert('No se ha registrado tu lista :( ');
+                }
+            })
+            .catch((error)=>{
+                this.error=error;
+                this.data=undefined;
+                console.debug('Error en Apex'+this.error);
+            }
+            )
              //limpiar datos
         }else{
             
@@ -39,6 +171,7 @@ export default class YN_SHOPPING_LIST extends LightningElement {
         }else{
             this.checkExistingList=true;
             console.log('else existing:'+this.checkExistingList);
+            this.fillCombobox();
         }
     }
     onChangeNewList(){

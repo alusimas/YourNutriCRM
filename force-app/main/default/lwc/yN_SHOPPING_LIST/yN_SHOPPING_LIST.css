@@ -19,9 +19,9 @@
     display: block !important; 
 }
  .slds-button{ 
-     --slds-c-button-color-background: #BB00FF;
+     /* --slds-c-button-color-background: #BB00FF;
     --slds-c-button-color-background-hover: #8700B8;
     --slds-c-button-color-border: #BB00FF;
-    --slds-c-button-color-border-hover: #8700B8; 
+    --slds-c-button-color-border-hover: #8700B8;  */
    
 }

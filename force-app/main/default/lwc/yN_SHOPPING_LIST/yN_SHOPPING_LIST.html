@@ -2,7 +2,7 @@
   @description       : 
   @author            : aahamjik
   @group             : 
-  @last modified on  : 02-27-2022
+  @last modified on  : 03-02-2022
   @last modified by  : aahamjik
 -->
 <template>
@@ -38,7 +38,7 @@
         name="recentLists"
         label="My lists"
         placeholder="Select List"
-        value={existingListValue}
+        value={selectedListValue}
         options={optionList}
         onchange={handleListChange} >
     </lightning-combobox>
@@ -86,6 +86,7 @@
         class="buttonSend"
         label="SAVE"
         onclick={handleSave}>
+        
         
         </lightning-button>
     
