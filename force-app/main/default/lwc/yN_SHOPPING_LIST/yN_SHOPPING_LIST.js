@@ -109,6 +109,16 @@ export default class YN_SHOPPING_LIST extends LightningElement {
         return this.userShoppingLists;
     }
 
+    cleanfields(){
+        this.listNameValue='';
+        this.currentAccount='';
+        this.articlesList=new Array();
+        this.printTable();
+        this.chosenValue='';
+        this.userShoppingLists=[];
+        this.checkExistingList=false;
+        this.checkNewList=false;
+    }
 
 
     handleSave(){
@@ -129,8 +139,7 @@ export default class YN_SHOPPING_LIST extends LightningElement {
             const jsonArraySend=JSON.stringify(this.articlesList);
             console.log('**JSON::'+jsonArraySend);
              console.log('**es nueva lista Boolean:'+this.newList);
-            //const patientAccountID='0017Q000006kJDFQA2';
-            
+          
             //enviar a apex crear lista
             insertShoppingList({listName: this.listNameValue, Jsonlist:jsonArraySend,accountID:this.currentAccount,newList:newList,listID:this.chosenValue })
             .then((result)=>{
@@ -142,11 +151,11 @@ export default class YN_SHOPPING_LIST extends LightningElement {
                 if(this.isInserted){
 
                     console.log('Si se registró:'+this.isInserted);
-                    window.alert('Se ha registrado tu lista!! :)');
-                    
+                    window.alert('Your shopping list it has already updated!! :)');
+                    this.cleanfields();
                 }else{
                     console.log('No se registró:'+this.isInserted);
-                    window.alert('No se ha registrado tu lista :( ');
+                    window.alert('We apologize, something went wrong and we couldn\'t update your shopping list :( ');
                 }
             })
             .catch((error)=>{
