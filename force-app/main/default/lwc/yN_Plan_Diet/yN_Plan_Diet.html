@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : aahamjik
+  @group             : 
+  @last modified on  : 03-03-2022
+  @last modified by  : aahamjik
+-->
+<template>
+    <h1>Your plan information</h1>
+   <table>
+       <tr>
+           <th> PLAN </th>
+           <th> WEIGHT </th>
+           <th> HEIGHT </th>
+           <th> IMC </th>
+       </tr>
+       <tr>
+           <td><b>{plan}</b></td>
+           <td><b>{weight}</b></td>
+           <td><b>{height}</b></td>
+           <td><b>{imc}</b></td>
+       </tr>
+   </table>
+<br>
+   <a href={foodPlan} class="plans" target="_blank">My food plan</a>
+   <a href={excercisePlan} class="plans" target="_blank">My excercise plan</a>
+  
+</template>
