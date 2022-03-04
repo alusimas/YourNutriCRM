@@ -2,11 +2,11 @@
   @description       : 
   @author            : aahamjik
   @group             : 
-  @last modified on  : 03-02-2022
+  @last modified on  : 03-04-2022
   @last modified by  : aahamjik
 -->
 <template>
-    <h1><b></b>Shopping List</b></h1>
+    <h1>SHOPPING LIST</h1>
     <div class="newListDiv">
       <lightning-input 
       type="checkbox"
@@ -30,10 +30,9 @@
       onchange={newListChangeValue}
       value={listNameValue}
       label="Write the name of the shopping list"></lightning-input>
-
+      <br>
     </div>
     <div if:true={checkExistingList}>
-      <p>combobox</p>
       <lightning-combobox
         name="recentLists"
         label="My lists"
@@ -42,6 +41,7 @@
         options={optionList}
         onchange={handleListChange} >
     </lightning-combobox>
+    <br>
     </div>
     <div class="main">
        

@@ -6,7 +6,8 @@
 .YN_table{
     /* display: flex; justify-content: center; width: 49%; */
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 5em;
+    margin-left: 20rem;
 
 }
 .slds-input{
@@ -15,4 +16,25 @@
 .YN_data{
     width: 100%;
     margin-top: 3em;
+}
+h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    color: rgb(49, 141, 53);
+}
+
+:host .slds-form-element{
+    --lwc-formLabelFontSize:1rem;
+}
+td{
+    font-size: 1rem;
+    padding: 0.25rem;
+}
+th{
+    font-size: 1.25rem;
+    padding: 0.15rem;
+}
+.buttonSearch{
+    padding-left: 45%;
 }

@@ -2,11 +2,12 @@
   @description       : 
   @author            : aahamjik
   @group             : 
-  @last modified on  : 02-20-2022
+  @last modified on  : 03-04-2022
   @last modified by  : aahamjik
 -->
 <template>
     <lightning-card>
+        <h1>FOOD SEARCHER</h1>
     <div >
      <lightning-input 
      id="foodInput"
@@ -15,13 +16,16 @@
      value={foodValue}
      placeholder="Write the food's name"
     label="Insert the food you want to search"></lightning-input>
-
+    <br>
+    <div class="buttonSearch">
     <lightning-button
     id="search"
+    class="fontSizeCSS"
     label="Search"
     onclick={handleClick}>
     
     </lightning-button>
+    </div>
     <br>
     <div class="YN_data">
         <template if:true={show}>
@@ -29,26 +33,26 @@
             
             <table>
                 <tr>
-                <th>Food: {foodlabel}</th>
+                    <th>Food:  {foodlabel} </th>
                 </tr>
                 <tr>
-                <td>Category: {foodCategory}</td>
+                    <td>Category:  {foodCategory}</td>
                 </tr>
                 <tr>
-                    <td>CHOCDF: {foodCarbo}</td>
+                    <td>Carbohydrate: {foodCarbo} g.</td>
                 </tr>
                 <tr>
-                    <td>ENERC_KCAL: {foodKcal}</td>
+                    <td>Energy: {foodKcal} kcal.</td>
                 </tr>
                 <tr>
-                    <td>FAT: {foodFat}</td>
+                    <td>Fat: {foodFat} g.</td>
                 </tr>
                 
                 <tr>
-                    <td>FIBTG: {foodFIBTG}</td>
+                    <td>Fiber: {foodFIBTG} g.</td>
                 </tr>
                 <tr>
-                    <td>PROCNT: {foodPROCNT}</td>
+                    <td>Protein: {foodPROCNT} g.</td>
                 </tr>
                 
                 

@@ -18,10 +18,25 @@
 .list{
     display: block !important; 
 }
- .slds-button{ 
-     /* --slds-c-button-color-background: #BB00FF;
-    --slds-c-button-color-background-hover: #8700B8;
-    --slds-c-button-color-border: #BB00FF;
-    --slds-c-button-color-border-hover: #8700B8;  */
-   
+
+h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    color: rgb(49, 141, 53);
+}
+:host .slds-form-element{
+    --lwc-formLabelFontSize:1rem;
+}
+:host .newListDiv {
+    --lwc-fontSize3:1rem;
+}
+
+table{
+    margin-left: 20rem;
+    /* margin-left: 15rem; */
+    width: 50%;
+}
+.buttonSend{
+    padding-left: 45%;
 }
