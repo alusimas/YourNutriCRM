@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "9d4e4141-b2d8-4375-bb59-2daa26b7846b",
+  "appPageId" : "97510cb4-b198-4a1d-a4c9-52466e69fc68",
+  "configurationTags" : [ ],
+  "id" : "403a8395-4f4a-4470-aba7-a052be5fe772",
+  "label" : "Shopping list",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-shopping-list",
+  "type" : "route",
+  "urlPrefix" : "shopping-list"
+}

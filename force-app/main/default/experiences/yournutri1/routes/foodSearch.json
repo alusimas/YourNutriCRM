@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "b94e8ef1-25d5-44ce-8465-1b76436bf9e5",
+  "appPageId" : "97510cb4-b198-4a1d-a4c9-52466e69fc68",
+  "configurationTags" : [ ],
+  "id" : "b0d76d4c-9b17-47aa-acc2-7c8a086fc339",
+  "label" : "Food search",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-food-search",
+  "type" : "route",
+  "urlPrefix" : "food-search"
+}

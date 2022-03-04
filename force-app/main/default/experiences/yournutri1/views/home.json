@@ -1,0 +1,65 @@
+{
+  "appPageId" : "97510cb4-b198-4a1d-a4c9-52466e69fc68",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "ec3e1565-ad2f-41b0-86c5-dc76933b1b19",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div>\n<img src='https://yournutri-dev-ed--c.visualforce.com/resource/1645878929000/PortadaHome' />\n</div>\n<div class=\"YN_header\">\n<ul >\n  <li><a href=\"/s/\">HOME</a></li>\n  <li><a href=\"#news\">MY DATE</a></li>\n  <li><a href=\"/s/shopping-list\">MY SHOPPING LIST</a></li>\n  <li><a href=\"/s/food-search\">FOOD SEARCHER</a></li>\n</ul>\n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "c76f297c-a307-4bb4-bec9-eececeb1f2d1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ea88711f-bcaa-4da0-a348-926d04730799",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:yN_Plan_Diet",
+      "id" : "05e82e36-ca3b-49ee-a779-8cde269289a9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c7832591-cfb8-4049-8bb9-ee82524f7705",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div style=\"width:100%;height:100px;background-color:#fffff\">\n    <div style=\"margin:auto;width:100%;padding:10px:\">\n         <hr style=\"width=100%;border:none;border-bottom: 1px solid #c3dee7;padding:0;margin:0;ali\"> \n        <div style=\"width:100%;display:inline\">\n         \n        <p class=\"footerP\"><img src=\"{!contentAsset.LogoMini.1}\" class=\"footeIimg\"  alt=\"YourNutri\"> © 2022 YourNutri by Alhoceima</p>\n   \t\t</div>\n        \n    </div>\n  \n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "0cfce1dc-e738-453c-a84c-a6ff6048c761",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b9261ecc-a4f5-499a-9aa7-bea1745f0ef9",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a130a2f0-80b7-4b13-b877-e418e773be4a",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cf2851dd-5691-4c4c-b970-95b09f59ebb9",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

@@ -1,0 +1,65 @@
+{
+  "appPageId" : "97510cb4-b198-4a1d-a4c9-52466e69fc68",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "9d4e4141-b2d8-4375-bb59-2daa26b7846b",
+  "label" : "Shopping list",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div>\n<img src='https://yournutri-dev-ed--c.visualforce.com/resource/1645878929000/PortadaHome' />\n</div>\n<div class=\"YN_header\">\n<ul >\n  <li><a href=\"/s/\">HOME</a></li>\n  <li><a href=\"#news\">MY DATE</a></li>\n  <li><a href=\"/s/shopping-list\">MY SHOPPING LIST</a></li>\n  <li><a href=\"/s/food-search\">FOOD SEARCHER</a></li>\n</ul>\n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "fb63450a-7feb-4c57-8673-37935b119f85",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6c2f819c-91d2-4913-8303-990a49eacffb",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:yN_SHOPPING_LIST",
+      "id" : "ef4245a4-11cb-4042-9e84-80b0b21c14ff",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "310e3914-dce0-4c74-a4ce-acf7777983f9",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div style=\"width:100%;height:100px;background-color:#fffff\">\n    <div style=\"margin:auto;width:100%;padding:10px:\">\n         <hr style=\"width=100%;border:none;border-bottom: 1px solid #c3dee7;padding:0;margin:0;ali\"> \n        <div style=\"width:100%;display:inline\">\n         \n        <p class=\"footerP\"><img src=\"{!contentAsset.LogoMini.1}\" class=\"footeIimg\"  alt=\"YourNutri\"> © 2022 YourNutri by Alhoceima</p>\n   \t\t</div>\n        \n    </div>\n  \n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "9737808b-508e-4a3b-a728-41ed6f03bbf1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "54c885ed-3f3b-402a-9f1c-4450e68cfe78",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Shopping list"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "7eb1af9a-8600-4022-b721-9861bb1acd71",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9776ae06-b3c0-4114-b90f-a4e75dd586f6",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-shopping-list"
+}

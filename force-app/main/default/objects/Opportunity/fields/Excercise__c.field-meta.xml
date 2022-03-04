@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Excercise__c</fullName>
+    <externalId>false</externalId>
+    <label>Excercise</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>never</fullName>
+                <default>false</default>
+                <label>never</label>
+            </value>
+            <value>
+                <fullName>1 a week</fullName>
+                <default>false</default>
+                <label>1 a week</label>
+            </value>
+            <value>
+                <fullName>2 a week</fullName>
+                <default>false</default>
+                <label>2 a week</label>
+            </value>
+            <value>
+                <fullName>3 a week</fullName>
+                <default>false</default>
+                <label>3 a week</label>
+            </value>
+            <value>
+                <fullName>4 a week</fullName>
+                <default>false</default>
+                <label>4 a week</label>
+            </value>
+            <value>
+                <fullName>5 a week</fullName>
+                <default>false</default>
+                <label>5 a week</label>
+            </value>
+            <value>
+                <fullName>6 a week</fullName>
+                <default>false</default>
+                <label>6 a week</label>
+            </value>
+            <value>
+                <fullName>7 a week</fullName>
+                <default>false</default>
+                <label>7 a week</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

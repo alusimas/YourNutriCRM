@@ -1,0 +1,65 @@
+{
+  "appPageId" : "97510cb4-b198-4a1d-a4c9-52466e69fc68",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "b94e8ef1-25d5-44ce-8465-1b76436bf9e5",
+  "label" : "Food search",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div>\n<img src='https://yournutri-dev-ed--c.visualforce.com/resource/1645878929000/PortadaHome' />\n</div>\n<div class=\"YN_header\">\n<ul >\n  <li><a href=\"/s/\">HOME</a></li>\n  <li><a href=\"#news\">MY DATE</a></li>\n  <li><a href=\"/s/shopping-list\">MY SHOPPING LIST</a></li>\n  <li><a href=\"/s/food-search\">FOOD SEARCHER</a></li>\n</ul>\n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "2488459c-fb91-463c-b976-92ebc2c7499d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "deed9efd-7f2a-4955-a6a1-9089144fe8a1",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:yN_Show_food",
+      "id" : "872a4467-22e9-4654-939e-16fe6223a21a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a7207cfb-10d9-40d0-91ff-95882970bb8a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div style=\"width:100%;height:100px;background-color:#fffff\">\n    <div style=\"margin:auto;width:100%;padding:10px:\">\n         <hr style=\"width=100%;border:none;border-bottom: 1px solid #c3dee7;padding:0;margin:0;ali\"> \n        <div style=\"width:100%;display:inline\">\n         \n        <p class=\"footerP\"><img src=\"{!contentAsset.LogoMini.1}\" class=\"footeIimg\"  alt=\"YourNutri\"> © 2022 YourNutri by Alhoceima</p>\n   \t\t</div>\n        \n    </div>\n  \n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "62b8047e-a022-4e5d-ab2e-8415f7a7ed96",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1beebf86-ed58-42d1-8d18-c39b0e10e958",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Food search"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "410e4369-5da9-4d54-bef8-0d6e222bb4d1",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "68c0ec2f-2dac-49a0-b221-2e01bcf8fe83",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-food-search"
+}
