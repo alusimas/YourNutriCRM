@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : aahamjik
  * @group             : 
- * @last modified on  : 03-02-2022
+ * @last modified on  : 03-05-2022
  * @last modified by  : aahamjik
 **/
 import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
@@ -115,7 +115,6 @@ export default class YN_SHOPPING_LIST extends LightningElement {
         this.articlesList=new Array();
         this.printTable();
         this.chosenValue='';
-        this.userShoppingLists=[];
         this.checkExistingList=false;
         this.checkNewList=false;
     }
